@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        wahyu setiyawan XII-G
+    </head>
+    <body>
+        <form class="" action="">
+            <input type="teks" name="" id="" value="" placeholder="nama lengkap"/><br />
+            <input type="email" name="" id="" value="" placeholder="Email"/><br />
+            <input type="password" name="" id="" value="" placeholder="password"/><br />
+            <input type="number" name="" id="" value="" placeholder="nomor hp"/><br />
+            <input type="date" name="" id="" value="" placeholder="tanggal lahir"/><br />
+            <input type="submit" name=
+        </form>
+    </body>
+</html>
