@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        wahyu setiyawan XII-G
+    </head>
+    <body>
+<form id="registerForm">
+  <input type="text" id="name" placeholder="nama">
+  <input type="email" id="email" placeholder="email">
+  <input type="password" id="password" placeholder="password">
+  <input type="number" id="nomor hp" placeholder="nomor hp">
+  <input type="date" id="tanggal" placeholder="tanggal lahir"/>
+  <button type="submit">Submit</button>
+</form>
+
+<table id="dataTable">
+  <tbody>
+      <tr>
+          <th>nama</th>
+          <th>email</th>
+          <th>nomor hp</th>
+          <th>tanggal lahir</th>
+      </tr>
+  </tbody>
+</table>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // ambil value dari input
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const nomor = document.getElementById("nomor hp").value;
+  const tanggal = document.getElementById("tanggal").value;
+
+  // ambil table dan tbody
+  const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+  const newRow = table.insertRow();
+
+  // masukkan data ke dalam tabel
+  newRow.insertCell(0).textContent = name;
+  newRow.insertCell(1).textContent = email;
+  newRow.insertCell(2).textContent = nomor;
+  newRow.insertCell(3).textContent = tanggal;
+
+  // Reset form setelah submit
+  document.getElementById("registerForm").reset();
+});
+</script>
+    </body>
+</html>
