@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrasi GameZone</title>
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0f0f0f;
+      color: #00ffcc;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ffcc;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background-color: #0f0f0f;
+      border: 1px solid #00ffcc;
+      border-radius: 8px;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+    }
+
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 8px #00ffcc;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #00ffcc;
+      color: #0f0f0f;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #00e6b8;
+    }
+
+    table {
+      margin-top: 40px;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 800px;
+      background-color: #1a1a1a;
+      box-shadow: 0 0 15px #00ffcc;
+      color: #00ffcc;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #00ffcc;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0f0f0f;
+      text-shadow: 0 0 5px #00ffcc;
+    }
+
+    tr:nth-child(even) {
+      background-color: #121212;
+    }
+
+    tr:hover {
+      background-color: #222222;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registration</h1>
+
+  <form id="registerForm">
+    <input type="text" id="name" placeholder="nama" required>
+    <input type="email" id="email" placeholder="email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <input type="number" id="nomor hp" placeholder="Nomor HP Aktif" required>
+    <input type="date" id="tanggal" placeholder="Tanggal Lahir" required>
+    <button type="submit">submit</button>
+  </form>
+
+  <table id="dataTable">
+    <tbody>
+      <tr>
+        <th>nama</th>
+        <th>Email</th>
+        <th>Nomor HP</th>
+        <th>Tanggal Lahir</th>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const nomor = document.getElementById("nomor hp").value;
+      const tanggal = document.getElementById("tanggal").value;
+
+      const table = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+      const newRow = table.insertRow();
+
+      newRow.insertCell(0).textContent = name;
+      newRow.insertCell(1).textContent = email;
+      newRow.insertCell(2).textContent = nomor;
+      newRow.insertCell(3).textContent = tanggal;
+
+      document.getElementById("registerForm").reset();
+    });
+  </script>
+</body>
+</html>
